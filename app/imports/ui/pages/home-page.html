@@ -1,0 +1,45 @@
+<template name="Home_Page">
+  <div class="ui middle aligned centered grid text container">
+
+    <div class="twelve wide column">
+      <h1>Welcome to Manoa Adventures!</h1>
+      <p>Browse top rated adventures below or sign in to rate, save and add.</p>
+    </div>
+
+    {{#if Template.subscriptionsReady}}
+    <table style="margin-top: 20px" class="ui celled table">
+      <thead>
+      <tr>
+        <th>Adventure</th>
+        <th>Intensity Rating</th>
+        <th>Location</th>
+        <th>Author</th>
+        <th>Rating</th>
+        <th>Save</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      {{#each contact in contactsList}}
+      <tr>
+        <td>{{contact.adventure}}</td>
+        <td>{{contact.intensity}}</td>
+        <td>{{contact.location}}</td>
+        <td>{{contact.author}}</td>
+        <td>{{contact.rating}}</td>
+        <td>{{contact.save}}</td>
+
+
+        <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
+
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    {{> Loading}}
+    {{/if}}
+
+
+  </div>
+</template>

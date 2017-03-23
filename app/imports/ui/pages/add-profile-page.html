@@ -1,0 +1,27 @@
+<template name="Add_Profile_Page">
+    <div style="margin-top: 20px" class="ui container">
+      <form class="ui form contact-data-form {{ errorClass }}">
+        <h4 class="ui dividing header">Create Profile Information</h4>
+        <div class="field">
+          <label>Name</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" name="first" placeholder="First Name">
+            </div>
+            <div class="field">
+              <input type="text" name="last" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+
+          <label>Interest Descriptions</label>
+          <textarea></textarea>
+        </div>
+
+
+        <button class="ui button" type="submit">Submit</button>
+      </form>
+    </div>
+
+</template>
